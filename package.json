@@ -1,0 +1,32 @@
+{ "name": "VSC-Extension-Testing",
+  "displayName":"LSEG Analytics",
+  "description":"This extension brings dynamic intelligent code completion features tailored specifically for developers working with the LSEG LFA Python SDK, empowering them to write code more efficiently and accurately.",
+  "publisher":"LSEG",
+  "version":"1.0.0",
+  "type": "module",
+  "engines": {
+    "vscode": "1.89.0" 
+  },
+  "scripts": {
+    "testFromVSIX": "extest get-vscode && extest get-chromedriver && code --install-extension lseg.lseg-analytics.vsix && extest run-tests './test/**.ts'",
+    "ui-test": "extest setup-and-run './test/*.test.js",
+    "testFromMarketplace": "extest get-vscode && extest get-chromedriver && extest install-from-marketplace lseg.lseg-analytics && extest run-tests './test/**.ts'"
+  },
+  "dependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3",
+    "vscode-extension-tester": "^8.6.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.16",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.9",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "chai": "^4.4.1",
+    "eslint": "^8.57.0",
+    "mocha": "^10.5.2",
+    "typescript": "^5.5.2",
+    "vscode-extension-tester": "^8.3.1"
+  }
+}
